@@ -15,9 +15,8 @@ def sendpoll(message):
     day_name = today.strftime("%A")
     
     options = ['YES','NO']
-    bot.send_poll(message.chat.id,f"How many of you will have food from staff mess on  ?",options)
-    ycount = 0
-    ncount = 0
+    bot.send_poll(message.chat.id,f"How many of you will have food from staff mess on {d[day_name]} ?",options)
+    
 
 
 def timer(message):
@@ -45,8 +44,6 @@ def start(message):
         bot.reply_to(message,"started")
         thread = threading.Thread(target=timer,args=(message,))
         thread.start()
-
-
 
         
 bot.infinity_polling()
